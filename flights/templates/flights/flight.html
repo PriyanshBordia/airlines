@@ -1,0 +1,38 @@
+{% extends "flights/base.html" %}
+
+{% block title %}
+    Andrømed Airlines Flight {{ flight.id }}
+{% endblock %}
+
+{% block head %}
+    <style media="screen">
+        .flight-body
+        {
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="flight-body">
+        <h1>Flight {{ flight.id }}</h1>
+        <ul>
+            <li>Origin: {{ flight.origin }}</li>
+            <li>Destination: {{ flight.destination }}</li>
+            <li>Duration: {{ flight.duration }}</li>
+        </ul>
+        <hr>
+        <h3>Passengers</h3>
+        <ul>
+            {% for passenger in passengers %}
+                <li>{{ passenger }}</li>
+            {% empty %}
+                <div class="alert alert-success" role="alert">No Passenegers Onboard.</div>
+            {% endfor %}
+        </ul>
+        <hr>
+    </div>
+
+{% endblock %}

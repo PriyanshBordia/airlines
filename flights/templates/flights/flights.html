@@ -1,0 +1,29 @@
+{% extends "flights/base.html" %}
+
+{% block title %}
+    Andrømed Airlines Flight Details
+{% endblock %}
+
+{% block head %}
+    <style media="screen">
+        .flights
+        {
+            max-width: 600px;
+            margin: 20px;
+            padding: 30px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="flights">
+        <h1>Flights</h1>
+        <hr>
+        <ul>
+            {% for flight in flights %}
+                <li><a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
+            {% endfor %}
+        </ul>
+        <hr>
+    </div>
+{% endblock %}

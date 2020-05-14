@@ -1,13 +1,39 @@
-{% extends "base.html" %}
+{% extends "flights/base.html" %}
 
 {% block title %}
     Andrømed Airlines
 {% endblock %}
 
 {% block head %}
-
+    <style media="screen">
+        #book-flight
+        {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-    
+    <div id="book-flight">
+        <h1>Andrømed Airlines.</h1>
+        <hr>
+        <br>
+
+        <form id="form" action="{% url 'book' %}" method="post">
+            {% csrf_token %}
+            <select name="flight_id">
+                {% for flight in flights %}
+                    <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <hr>
+            <input type="text" autocomplete="off" autofocus placeholder="First Name" name="first">
+            <input type="text" autocomplete="off" autofocus placeholder="Last Name" name="last">
+            <button>Book Flight.</button>
+        </form>
+    </div>
 {% endblock %}

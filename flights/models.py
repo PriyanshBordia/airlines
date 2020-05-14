@@ -6,14 +6,23 @@ class Airport(models.Model):
     city = models.CharField(max_length=64)
     country = models.CharField(max_length=64)
 
+    def __str__(self):
+        return f"[{self.city}({self.code}), {self.country}]"
+
 
 class Flight(models.Model):
-    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, name="departures")
-    destination = models.ForeignKey(Airport, on_delete=models.CASCADE, name="arrivals")
-    duration = models.Integer()
+    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
+    destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
+    duration = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.id}. {self.origin} to {self.destination}, in {self.duration}."
 
 
 class Passenger(models.Model):
     first = models.CharField(max_length=21)
     last = models.CharField(max_length=21)
-    flights = models.ManyToMany()
+    flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
+
+    def __str__(self):
+        return f"{self.first} {self.last}"
