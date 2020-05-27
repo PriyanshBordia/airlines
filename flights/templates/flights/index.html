@@ -5,6 +5,18 @@
 {% endblock %}
 
 {% block head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelector('#book-flight').disabled = true;
+
+            document.querySelector('#first-name').onkeyup = () => {
+
+                if (document.querySelector('#first-name').value.length > 0)
+                    document.querySelector('#book-flight').disabled = false;
+            };
+        });
+    </script>
     <style media="screen">
         #book-flight
         {
@@ -18,7 +30,7 @@
 
 {% block body %}
     <div id="book-flight">
-        <h1>Andrømed Airlines.</h1>
+        <h1> Andrømed Airlines &#9992;</h1>
         <hr>
         <br>
 
@@ -30,10 +42,10 @@
                 {% endfor %}
             </select>
             <br>
-            <hr>
+            <br>
             <input type="text" autocomplete="off" autofocus placeholder="First Name" name="first">
             <input type="text" autocomplete="off" autofocus placeholder="Last Name" name="last">
-            <button>Book Flight.</button>
+            <button>Book Flight	&#10003;</button>
         </form>
     </div>
 {% endblock %}
