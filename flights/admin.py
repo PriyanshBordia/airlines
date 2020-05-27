@@ -9,6 +9,9 @@ class PassengerInline(admin.StackedInline):
 class FlightAdmin(admin.ModelAdmin):
     inlines = [PassengerInline]
 
+# class PassengerAdmin(admin.ModelAdmin):
+#     flights =
+
 # Register your models here.
 admin.site.register(Airport)
 admin.site.register(Flight, FlightAdmin)

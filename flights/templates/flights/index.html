@@ -5,18 +5,6 @@
 {% endblock %}
 
 {% block head %}
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            document.querySelector('#book-flight').disabled = true;
-
-            document.querySelector('#first-name').onkeyup = () => {
-
-                if (document.querySelector('#first-name').value.length > 0)
-                    document.querySelector('#book-flight').disabled = false;
-            };
-        });
-    </script>
     <style media="screen">
         #book-flight
         {
@@ -26,6 +14,20 @@
             text-align: center;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelector('#book').disabled = true;
+
+            document.querySelector('#first-name').onkeyup = () => {
+
+                if (document.querySelector('#first-name').value.length > 0 && (document.querySelector('#first-name').value).trim() !== '')
+                    document.querySelector('#book').disabled = false;
+                else
+                    document.querySelector('#book').disabled = true;
+            };
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -43,9 +45,9 @@
             </select>
             <br>
             <br>
-            <input type="text" autocomplete="off" autofocus placeholder="First Name" name="first">
-            <input type="text" autocomplete="off" autofocus placeholder="Last Name" name="last">
-            <button>Book Flight	&#10003;</button>
+            <input id="first-name" type="text" autocomplete="off" autofocus placeholder="First Name" name="first">
+            <input id="last-name" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last">
+            <button id="book">Book Flight.</button>
         </form>
     </div>
 {% endblock %}
