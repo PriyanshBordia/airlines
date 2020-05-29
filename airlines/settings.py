@@ -25,7 +25,7 @@ SECRET_KEY = '1cqyw@@+!ghoybzt&#qa=&0+ukya7z+z0a&+1g**c6w4-ar-pw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://andromed-airlines.herokuapp.com']
+ALLOWED_HOSTS = ['andromed-airlines.herokuapp.com']
 
 
 # Application definition
