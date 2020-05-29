@@ -1,3 +1,4 @@
+from django.db.models import MAX
 from django.test import TestCase
 
 from .models import Airport, Flight
@@ -41,3 +42,34 @@ class ModelsTestCase(TestCase):
         a2 = Airport.objects.get(code="BBB")
         f = Flight.objects.get(origin=a1, destination=a2, duration=-100)
         self.assertFalse(f.is_valid_flight())
+
+    def test_index(self):
+        c = Client()
+
+        response = c.get("/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_valid_flights_page(self):
+        c = Client()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context["flights"].count() < 10)
+
+    def test_valid_flight_page(self):
+        a1 = Airport.objects.get(code="AAA")
+        f = Flight.objects.get(origin=a1, destination=a1)
+
+        c = Client()
+        response = c.get(f"/{f.id}")
+        self.assertEqual(response.status_code, 200)
+
+    def test_valid_flight_page_passenger(self):
+        f = Flight.objects.get(pk=1)
+        p = Passenger.objects.create(first="Alice", last="Adams")
+
+        f.passengers.add(p)
+
+        c = Client()
+        response = c.get(f"/{f.id}")
+        self.assertEqual(request.status_code, 200)
+        self.assertEqual(request.context["passengers"].count(), 1)
