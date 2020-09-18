@@ -3,7 +3,23 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style media="screen">
+            footer
+            {
+                margin: 20px;
+                padding: 10px;
+                color: grey;  /* Gray */
+                text-decoration: none !important;
+                text-align: center;
+                font-size: 20px;
+            }
 
+            .button: hover
+            {
+                background-color: white;
+                color: #7851a9;
+            }
+        </style>
         {% block head %}
         {% endblock %}
 
@@ -12,5 +28,11 @@
     <body>
         {% block body %}
         {% endblock %}
+
+        <div class="fixed bottom">
+            <footer class = "button">
+                &copy; 2020 Andrømed Airlines, Inc.
+            </footer>
+        </div>
     </body>
 </html>

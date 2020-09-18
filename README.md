@@ -2,4 +2,4 @@
 
 ## Example
 
-Fin the app @[https://andromed-airlines.herokuapp.com]
+Fin the app at [Heroku](https://andromed-airlines.herokuapp.com)
