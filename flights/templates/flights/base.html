@@ -4,6 +4,13 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style media="screen">
+
+            .container
+            {
+                max-width: 700px;
+                margin: auto;
+                text-align: center;
+            }
             footer
             {
                 margin: 20px;
@@ -19,6 +26,10 @@
                 background-color: white;
                 color: #7851a9;
             }
+            .form-text
+            {
+                text-align: center;
+            }
         </style>
         {% block head %}
         {% endblock %}
@@ -28,13 +39,16 @@
     <body>
         {% block body %}
         {% endblock %}
-        <div class="form-text">
-            Let, me know your views on this webpage below.✌🏻!
+        <div class="container container-fluid mt-3 mr-auto ml-auto mb-2">
+            <div class="form-text">
+                Let, me know your views on this webpage below.✌🏻!
+            </div>
+            <section class="comments">
+    	        <script src="https://utteranc.es/client.js" repo="PriyanshBordia/airlines" issue-term="title" label="utterances" theme="github-light" crossorigin="anonymous" async>
+    	        </script>
+        	</section>
         </div>
-        <section class="comments">
-	        <script src="https://utteranc.es/client.js" repo="PriyanshBordia/airlines" issue-term="title" label="utterances" theme="github-light" crossorigin="anonymous" async>
-	        </script>
-    	</section>
+
         <div class="fixed bottom">
             <footer class = "button">
                 &copy; 2020 Andrømed Airlines, Inc.
