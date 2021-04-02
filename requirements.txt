@@ -3,7 +3,7 @@ alembic==1.4.3
 appdirs==1.4.4
 asgiref==3.2.10
 astroid==2.4.2
-attrs==19.1.0
+attrs==19.2.0
 autobahn==21.2.1
 Automat==20.2.0
 autopep8==1.5.4
