@@ -1,5 +1,5 @@
 language: python
-
+t
 python:
     - 3.8.3
 
@@ -8,10 +8,9 @@ install:
 
 script:
     - python3 manage.py makemigrations
-    
-deploy:
-    provider: heroku
-    api_key: $HEROKU_API_KEY
-    app: andromed-airlines
-    run: python3 manage.py migrate
-    on: master
+    - python3 manage.py migrate
+
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: change # default: always
