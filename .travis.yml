@@ -1,5 +1,5 @@
 language: python
-t
+
 python:
     - 3.8.3
 
@@ -13,4 +13,10 @@ script:
 notifications:
   email:
     on_success: never # default: change
-    on_failure: change # default: always
+    on_failure: always
+    
+  slack:
+        if: branch = master
+            email:
+                on_success: never # default: change
+                on_failure: always
