@@ -23,8 +23,7 @@ dateparser==1.0.0
 decouple==0.0.7
 distlib==0.3.1
 dj-database-url==0.5.0
-# Editable install with no version control (Django==3.1.2)
--e /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages
+Django==3.1.2
 django-crispy-forms==1.10.0
 django-environ==0.4.5
 django-extensions==3.0.9
