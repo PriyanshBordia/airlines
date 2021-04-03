@@ -79,7 +79,7 @@ pycparser==2.20
 pydocstyle==5.1.1
 pyflakes==2.2.0
 PyGetWindow==0.0.9
-Pygments==2.7.3
+Pygments==2.7.4
 PyHamcrest==2.0.2
 pylint==2.6.0
 PyMsgBox==1.0.9
