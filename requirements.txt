@@ -9,7 +9,7 @@ cryptography==39.0.1
 daiquiri==2.1.1
 Deprecated==1.2.8
 dj-database-url==0.5.0
-Django==3.2.16
+Django==3.2.18
 dnspython==1.16.0
 eventlet==0.31.0
 Flask==1.1.1
@@ -48,7 +48,7 @@ sqlparse==0.4.2
 submit50==3.0.2
 termcolor==1.1.0
 urllib3==1.26.5
-Werkzeug==0.16.0
+Werkzeug==2.2.3
 whitenoise==5.0.1
 wrapt==1.12.1
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
