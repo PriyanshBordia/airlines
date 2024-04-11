@@ -1,3 +1,3 @@
 # Andrømed Airlines
 
-Fin the app at [Heroku](https://andromed-airlines.herokuapp.com)
+Fin the app at [Heroku](https://priyanshbordia.github.io)
