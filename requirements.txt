@@ -11,7 +11,7 @@ Deprecated==1.2.8
 dj-database-url==0.5.0.
 Django==4.2.15
 dnspython==1.16.0
-eventlet==0.34.3
+eventlet==0.37.0
 Flask==2.2.5
 Flask-Session==0.3.1
 Flask-SocketIO==4.2.1
